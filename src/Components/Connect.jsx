@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../Components/box5.css';
 
 function Connect() {
@@ -8,14 +8,12 @@ function Connect() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Add the "open" class when the container is in view
           containerRef.current.classList.add('open');
         } else {
-          // Remove the "open" class when the container is out of view
           containerRef.current.classList.remove('open');
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the component is visible
+      { threshold: 0.1 }
     );
 
     if (containerRef.current) {
@@ -29,13 +27,20 @@ function Connect() {
     };
   }, []);
 
+  const handleMailClick = () => {
+    const mailtoLink = `mailto:your_email@example.com?subject=Let's Connect&body=Hi there, I’d like to discuss a project!`;
+    window.location.href = mailtoLink; // Triggers the default mail application
+  };
+
   return (
     <div className="connect-container" ref={containerRef}>
       <div className="connect-content">
         <p className="project-in-mind">GOT A PROJECT IN MIND?</p>
         <h1 className="connect-title">LET'S CONNECT</h1>
         <div className="write-message">
-          <button className="message-button">WRITE A MESSAGE</button>
+          <button onClick={handleMailClick} className="message-button">
+            WRITE A MESSAGE
+          </button>
         </div>
       </div>
 
