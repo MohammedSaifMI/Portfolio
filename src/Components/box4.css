@@ -1,0 +1,120 @@
+/* Container for the entire section */
+.box4.capabilities-showcase {
+    width: 100%;
+    padding: 2rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Top Navigation Links Styling */
+.top-nav {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Page Number and Total */
+.page-number,
+.page-total {
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+}
+
+/* Main Content Area */
+.capabilities-content 
+{
+    width: 100%;
+    height: 100%;
+    border: 0.1rem solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+
+
+/* Main Title Styling */
+.main-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.2;
+}
+
+/* Rows and Icons */
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 20px; /* Spacing between icons */
+    margin: 20px 0;
+}
+
+.icon {
+    width: 80px; /* Base size for icons */
+    height: 80px;
+    padding: 5px;
+    object-fit: contain;
+    opacity: 0; /* Start invisible */
+    transform: scale(0.8); /* Start larger */
+    animation: fadeInZoomOut 1s ease-in-out forwards;
+}
+
+/* Hover effect for icons */
+.icon:hover {
+    transform: scale(1.2) !important; /* Slight zoom-out on hover */
+    filter: brightness(1.2); /* Slight brightening on hover */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transitions */
+    
+
+}
+
+/* Keyframes for fade-in with zoom-out effect */
+@keyframes fadeInZoomOut {
+    0% {
+        opacity: 0;
+        transform: scale(1.5); /* Start zoomed in */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* End at normal size */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .main-title {
+        font-size: 2.5rem; /* Adjust size for medium screens */
+    }
+    .icon {
+        width: 70px !important; /* Adjust size of icons */
+        height: 70px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.8rem; /* Adjust size for smaller screens */
+    }
+    .icon {
+        width: 50px !important; /* Adjust size of icons */
+        height: 50px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.5rem; /* Adjust size for smallest screens */
+    }
+    .icon {
+        width: 30px !important; /* Adjust size of icons */
+        height:40px !important;
+    }
+}
+
+
+

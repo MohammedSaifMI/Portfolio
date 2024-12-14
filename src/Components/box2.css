@@ -1,0 +1,269 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container styles */
+.box2 {
+    height: fit-content;
+    width: 100%;
+    color: #fff;
+    position: relative !important;
+    padding-bottom: 100px !important;
+}
+
+/* Top Navigation */
+.top-nav {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    position: relative;
+    z-index: 1;
+    margin-top: 0; /* Remove any top margin */
+    padding-top: 20px; /* Optional: Adds padding if you want slight spacing without a gap */
+}
+
+/* Grid Layout */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Left, center, right layout */
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+/* Intro Section */
+.intro {
+    align-self: start;
+    width: 350px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+/* Intro Text */
+.intro-text {
+    font-size: 0.85rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    text-indent: 40px;
+}
+
+/* Centered Image Container */
+.center-image-container 
+{
+    width: 100%;
+}
+
+/* Button Section */
+.learn-more {
+    justify-self: start; /* Aligns the button to the left */
+    margin-left: 30px; /* Adjust margin to maintain the position */
+    text-align: center; /* Center the button text */
+}
+
+.btn-responsive {
+    font-size: 0.85rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.10rem;
+    font-weight: bold;
+    width: 80px;
+    height: 80px;
+    transition: background-color 0.3s ease;
+}
+
+/* Animated Text */
+.animated-text {
+    width: 100%; /* Ensure it covers the full width */
+    position: absolute; /* Change to absolute positioning */
+    bottom: -10px;
+    left: 0;
+    text-align: center;
+}
+
+.text1 {
+    text-transform: uppercase;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 10rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: white !important;
+    text-shadow: 0px 0px 20px rgb(0, 0, 0);
+}
+
+button.btn-outline-light:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.intro-text {
+    color: hsl(0 0% 100% / 0.2);
+    background-clip: text;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, white, white);
+    animation: text-reveal linear forwards;
+    animation-timeline: view();
+    animation-range-start: cover 20vh;
+    animation-range-end: cover 50vh;
+}
+
+@keyframes text-reveal {
+    to {
+        background-size: 100% 100%;
+    }
+}
+
+/* Media Queries for responsiveness */
+
+/* For large screens */
+@media (max-width: 1300px) {
+    .main-content-grid {
+        grid-template-columns: 1fr;
+        display: flex;
+    }
+    .center-image-container {
+        width: 40%;
+    }
+    .intro {
+        width: 400px;
+    }
+    .text1 {
+        font-size: 12rem;
+    }
+}
+
+/* For tablets and medium screens */
+@media (max-width: 1024px) {
+    .top-nav {
+        font-size: 0.7rem; /* Slightly smaller font size */
+        padding-top: 15px; /* Adjust padding */
+        letter-spacing: 0.08rem; /* Reduce letter spacing */
+    }
+    .main-content-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+    .center-image-container {
+        width: 50%;
+    }
+    .intro {
+        width: 80%;
+        text-align: center;
+    }
+    .text1 {
+        font-size: 8rem;
+    }
+    .intro-text {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .learn-more {
+        justify-self: center;
+        margin-left: 0;
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+    .top-nav {
+        font-size: 0.6rem !important; /* Smaller font size */
+        padding-top: 10px !important; /* Adjust padding */
+        letter-spacing: 0.07rem !important; /* Reduce letter spacing */
+    }
+    .main-content-grid {
+        grid-template-columns: 1fr;
+        display: block; /* Ensures content is stacked vertically */
+        padding: 1rem;
+    }
+    .intro {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 30px; /* Adds spacing below the intro */
+    }
+    .intro-text{
+        text-align: start;
+    }
+    .center-image-container {
+        width: 80%;
+        margin: 0 auto 20px auto; /* Centers the image and adds spacing below */
+    }
+    .animated-text {
+        width: 100%;
+        margin-bottom:-40px; /* Spacing below the marquee */
+        text-align: center;
+        z-index: -1;
+    }
+    .learn-more {
+        display: flex;
+        justify-content: center; /* Centers the button */
+        margin: 0 auto;
+        margin-top: 20px; /* Adds spacing above the button */
+        text-align: center;
+    }
+    .btn-responsive {
+        font-size: 0.85rem;
+        width: 80px;
+        height: 80px;
+        z-index: 2;
+    }
+}
+
+/* For small mobile screens */
+@media (max-width: 480px) {
+    .top-nav {
+        font-size: 0.5rem !important; /* Smallest font size */
+        padding-top: 8px !important; /* Reduce padding further */
+        letter-spacing: 0.05rem !important; /* Minimal letter spacing */
+    }
+    .main-content-grid {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+    }
+    .intro 
+    {
+        width: 90%;
+        text-align:start;
+        margin-top: 20px;
+        margin-bottom: 20px; /* Adds spacing below the intro */
+    }
+    .intro-text
+    {
+        font-size: small;
+        line-height: 1.2rem;
+        text-indent: 28px;
+        text-align: start;
+    }
+    .center-image-container {
+        width: 90%;
+        margin: 0 auto 20px auto; /* Centers the image and adds spacing below */
+    }
+    .animated-text {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 250px; /* Spacing below the marquee */
+        text-align: center;
+        z-index: -1;
+    }
+    .learn-more 
+    {
+        margin: 0 auto;
+        margin-top: 100px; /* Adds spacing above the button */
+        text-align: center;
+        padding-top: 40px;
+        
+    }
+    .btn-responsive 
+    {
+        
+        font-size: 0.9rem;
+        width: 80px;
+        height: 80px;
+        z-index: 1;
+
+    }
+}

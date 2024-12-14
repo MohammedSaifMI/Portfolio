@@ -1,0 +1,196 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Container */
+.navbar-container {
+  height: 14vh;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand (Logo) */
+.navbar-brand {
+  font-size: 2rem;
+  color: white;
+}
+
+.logo {
+  width: 80px;
+}
+
+/* Navbar Links (Visible on Large Screens) */
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem; /* Adds space between links */
+}
+
+.nav-link {
+  position: relative;
+  width: 100px;
+  height: 2rem;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 2rem 0rem 2rem 0rem;
+  overflow: hidden; /* Ensure the pseudo-element stays within bounds */
+  z-index: 1; /* Positioning for proper layering */
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+  transform: scaleY(0); /* Start with no fill */
+  transform-origin: bottom; /* Start filling from the bottom */
+  transition: transform 0.3s ease;
+  z-index: -1; /* Place behind the text */
+}
+
+.nav-link:hover::before 
+{
+  transform: scaleY(1); /* Fill effect from bottom to top on hover */
+}
+
+.nav-link:hover {
+  color: black; /* Adjust text color on hover */
+
+}
+
+/* Toggle Button (Visible on Small Screens) */
+.navbar-toggler {
+  position: relative;
+  z-index: 20;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.navbar-toggler:focus
+{
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease;
+
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  width: 30px;
+  height: 3px;
+  background-color:white;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler-icon::after {
+  top: 8px;
+}
+
+.navbar-toggler.open .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler.open .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler.open .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Full-Screen Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 15;
+}
+
+.menu-overlay.show {
+  transform: translateY(0);
+}
+
+.menu-list {
+  list-style: none;
+  text-align: center;
+}
+
+.menu-item {
+  margin: 1rem 0; 
+}
+
+.menu-item a {
+  width: 90%;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem; /* Padding for better hover area */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  outline: none;
+}
+
+.menu-item a:hover {
+  color: black;
+  background-color: white;
+  border-radius: 2rem 0rem 2rem 0rem; 
+}
+
+/* Reset margins and paddings for better layout */
+.container-fluid {
+  margin: 0 auto;
+  padding: 0 2rem; /* Controls spacing around navbar */
+}
+
+
+@media (max-width:430px) {
+
+.navbar-nav {
+display: none; 
+}
+  
+}

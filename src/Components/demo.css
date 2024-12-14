@@ -1,0 +1,11 @@
+.line-container {
+    position: absolute;
+    top: -50px; /* Ensures it aligns with the top of the container */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 3; /* Keeps it above other elements */
+}
+.wave {
+    transition: all 00.5s ease-in-out; /* Smooth transition */
+}
