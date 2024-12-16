@@ -1,15 +1,20 @@
-
 .banner {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   position: relative;
+  overflow: hidden; /* Ensure background stays contained */
 }
-.Load-logo
-{
+
+.Load-logo {
   width: 500px;
+  animation-name: logo-animate;
+  animation-duration: 4s; /* Increased duration for smoother effect */
+  animation-timing-function: ease-in-out; /* Smooth easing */
+  animation-iteration-count: 1;
 }
+
 .background-gif {
   position: absolute;
   inset: 0;
@@ -17,21 +22,31 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: fadeIn 3s ease-in-out forwards; /* Fade-in effect for smoother transition */
 }
 
-.Load-logo
-{
-  animation-name: logo-animate;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-}
+/* Loader animation */
 @keyframes logo-animate {
-  0%{
+  0% {
     transform: translateX(-300px);
+    opacity: 0; /* Make logo invisible at start */
   }
-  50%
-  {
-    transform:translateY(500px) rotate(360deg);
+  50% {
+    transform: translateY(500px) rotate(360deg);
+    opacity: 1; /* Logo becomes visible */
   }
-  
+  100% {
+    transform: translateX(0) rotate(360deg); /* Keep the rotation but reset the position */
+    opacity: 1;
+  }
+}
+
+/* Background gif fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

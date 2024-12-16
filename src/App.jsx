@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Nav from './Components/Nav';
 import Hero from './Components/Hero';
 import Box2 from './Components/Box2';
 import Capabilites from './Components/Capabilites';
@@ -19,7 +18,7 @@ function App() {
   }, []);
 
   if (isLoading) {
-    return <Loader />; 
+    // return <Loader />; 
   }
 
   return (
@@ -39,7 +38,6 @@ function App() {
         <span></span>
       </div>
       <Nav2/>
-      {/* <Nav /> */}
        <Hero />
       <Box2 />
       <Projectshowcasebox/>

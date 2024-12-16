@@ -1,8 +1,8 @@
 /* Container for the entire section */
 .box4.capabilities-showcase {
     width: 100%;
-    padding: 2rem;
-    height: 100vh;
+    padding: 2rem; /* Reduced padding for smaller screens */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -26,23 +26,24 @@
 }
 
 /* Main Content Area */
-.capabilities-content 
-{
+.capabilities-content {
     width: 100%;
     height: 100%;
     border: 0.1rem solid rgba(255, 255, 255, 0.3); /* Subtle border */
-    padding: 2rem;
+    padding: 1rem; /* Reduced padding for small screens */
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-
 
 /* Main Title Styling */
 .main-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Slightly smaller for smaller screens */
+    margin-bottom: 0.5rem; /* Reduced margin */
     letter-spacing: 0.1rem;
     line-height: 1.2;
+    text-align: center;
 }
 
 /* Rows and Icons */
@@ -50,18 +51,18 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 20px; /* Spacing between icons */
-    margin: 20px 0;
+    gap: 20px; /* Increased gap between icons for better spacing */
+    margin: 10px 0; /* Reduced margin for smaller screens */
 }
 
+/* Icon Styling */
 .icon {
-    width: 80px; /* Base size for icons */
-    height: 80px;
-    padding: 5px;
+    width: 70px; /* Base size for icons */
+    height: 70px;
+    padding: 8px;
     object-fit: contain;
     opacity: 0; /* Start invisible */
     transform: scale(0.8); /* Start larger */
-    animation: fadeInZoomOut 1s ease-in-out forwards;
 }
 
 /* Hover effect for icons */
@@ -69,11 +70,8 @@
     transform: scale(1.2) !important; /* Slight zoom-out on hover */
     filter: brightness(1.2); /* Slight brightening on hover */
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transitions */
-    
-
 }
 
-/* Keyframes for fade-in with zoom-out effect */
 @keyframes fadeInZoomOut {
     0% {
         opacity: 0;
@@ -85,36 +83,62 @@
     }
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .main-title {
-        font-size: 2.5rem; /* Adjust size for medium screens */
+/* Add the animation to icons when the section is in view */
+.animate-icons .icon {
+    animation: fadeInZoomOut 1s ease-in-out forwards;
+}
+
+
+/* Layout for Large Screens */
+@media (min-width: 1200px) {
+    .capabilities-content {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 columns grid for larger screens */
+        gap: 30px; /* Increased gap between icons */
     }
     .icon {
-        width: 70px !important; /* Adjust size of icons */
-        height: 70px !important;
+        width: 80px; /* Larger icons on big screens */
+        height: 80px;
     }
 }
 
+/* Medium Screens (Tablets) */
+@media (max-width: 1199px) {
+    .capabilities-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns grid for medium screens */
+        gap: 20px; /* Increased spacing between icons */
+    }
+    .icon {
+        width: 70px; /* Adjust icon size */
+        height: 70px;
+    }
+}
+
+/* Small Screens (Mobile Portrait) */
 @media (max-width: 768px) {
-    .main-title {
-        font-size: 1.8rem; /* Adjust size for smaller screens */
+    .capabilities-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns grid for mobile devices */
+        gap: 15px; /* Spacing between icons */
     }
     .icon {
-        width: 50px !important; /* Adjust size of icons */
-        height: 50px !important;
+        width: 60px; /* Adjust size for smaller mobile screens */
+        height: 60px;
+        padding: 5px;
     }
 }
 
+/* Extra Small Screens (Small Mobile Portrait) */
 @media (max-width: 480px) {
-    .main-title {
-        font-size: 1.5rem; /* Adjust size for smallest screens */
+    .capabilities-content {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column grid for very small mobile screens */
+        gap: 12px; /* Slightly larger gap for better spacing on small screens */
     }
     .icon {
-        width: 30px !important; /* Adjust size of icons */
-        height:40px !important;
+        width: 50px; /* Small icons for very small screens */
+        height: 50px;
+        padding: 5px;
     }
 }
-
-
-

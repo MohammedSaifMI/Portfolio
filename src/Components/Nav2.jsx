@@ -10,7 +10,7 @@ function Nav2() {
   };
 
   return (
-    <div className="navbar-container w-100 h-25">
+    <div className="navbar-container w-100">
       <div className="container-fluid">
         <nav className="navbar">
           {/* Brand (Logo) */}
@@ -45,6 +45,9 @@ function Nav2() {
           </li>
           <li className="menu-item">
             <a href="#" onClick={toggleMenu}>Contact</a>
+          </li>
+          <li>
+            <hr />
           </li>
         </ul>
       </div>

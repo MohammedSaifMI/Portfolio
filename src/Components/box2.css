@@ -9,6 +9,7 @@
 .box2 {
     height: fit-content;
     width: 100%;
+    min-height: 100vh !important;
     color: #fff;
     position: relative !important;
     padding-bottom: 100px !important;

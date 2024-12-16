@@ -7,7 +7,8 @@
 
 /* Navbar Container */
 .navbar-container {
-  height: 14vh;
+  height: 10vh;
+  min-height: 14vh;
   background: transparent;
   position: relative;
   z-index: 10;
@@ -28,7 +29,11 @@
 .logo {
   width: 80px;
 }
-
+.nav-icon
+{
+  width: 50px;
+  height: 50px;
+}
 /* Navbar Links (Visible on Large Screens) */
 .navbar-nav {
   display: flex;
