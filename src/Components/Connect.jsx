@@ -28,8 +28,8 @@ function Connect() {
   }, []);
 
   const handleMailClick = () => {
-    const mailtoLink = `mailto:your_email@example.com?subject=Let's Connect&body=Hi there, I’d like to discuss a project!`;
-    window.location.href = mailtoLink; // Triggers the default mail application
+    const mailtoLink = `mailto:md.saifmi1969@gmail.com?subject=Let's Connect&body=Hi there, I’d like to discuss a project!`;
+    window.location.href = mailtoLink; 
   };
 
   return (
