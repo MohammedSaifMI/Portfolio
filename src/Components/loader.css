@@ -1,3 +1,4 @@
+/* Loader container */
 .banner {
   display: flex;
   justify-content: center;
@@ -5,16 +6,42 @@
   height: 100vh;
   position: relative;
   overflow: hidden; /* Ensure background stays contained */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease, visibility 1s ease; /* Smooth fade-out */
 }
 
+/* Apply fade-out to loader when the state changes */
+.banner.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Logo styles */
 .Load-logo {
-  width: 500px;
-  animation-name: logo-animate;
-  animation-duration: 4s; /* Increased duration for smoother effect */
-  animation-timing-function: ease-in-out; /* Smooth easing */
-  animation-iteration-count: 1;
+  width: 500px; /* Original size for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  animation: fadeInLogo 4s ease-in-out forwards; /* Apply the fade-in effect */
 }
 
+/* Media query for small screens (tablet and below) */
+@media (max-width: 768px) {
+  .Load-logo {
+    width: 70%; /* Adjust logo width for smaller screens */
+    max-width: 400px; /* Limit the maximum size of the logo on smaller screens */
+  }
+}
+
+/* Media query for extra small screens (mobile devices) */
+@media (max-width: 480px) {
+  .Load-logo {
+    width: 80%; /* Further adjust for very small screens */
+    max-width: 300px; /* Limit the maximum size of the logo */
+   
+  }
+}
+
+/* Background gif styles */
 .background-gif {
   position: absolute;
   inset: 0;
@@ -22,27 +49,21 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: fadeIn 3s ease-in-out forwards; /* Fade-in effect for smoother transition */
+  animation: fadeInBackground 3s ease-in-out forwards; /* Fade-in effect for background */
 }
 
-/* Loader animation */
-@keyframes logo-animate {
+/* Logo fade-in animation */
+@keyframes fadeInLogo {
   0% {
-    transform: translateX(-300px);
-    opacity: 0; /* Make logo invisible at start */
-  }
-  50% {
-    transform: translateY(500px) rotate(360deg);
-    opacity: 1; /* Logo becomes visible */
+    opacity: 0; /* Start as invisible */
   }
   100% {
-    transform: translateX(0) rotate(360deg); /* Keep the rotation but reset the position */
-    opacity: 1;
+    opacity: 1; /* Fade to fully visible */
   }
 }
 
 /* Background gif fade-in effect */
-@keyframes fadeIn {
+@keyframes fadeInBackground {
   0% {
     opacity: 0;
   }

@@ -59,13 +59,26 @@ function Box2() {
     };
 
     return (
-        <div className="box2 text-white">
+        <div className="box2 text-white" id='next-section'>
             {/* Top Navigation Links */}
-            <Demo />
+            <Demo className="demo-container" />
             <div className="top-nav d-flex justify-content-between align-items-center px-4 py-3">
                 <p className="page-number">02/</p>
                 <p><span>About</span></p>
-                <p><span>EMAIL / GITHUB / TWITTER / LINKEDIN</span></p>
+                {/* <p>
+                <a href="mailto:contact@saif.com" target="_blank" rel="noopener noreferrer">
+        EMAIL
+    </a> / 
+    <a href="https://github.com/saif" target="_blank" rel="noopener noreferrer">
+        GITHUB
+    </a> / 
+    <a href="https://twitter.com/saif" target="_blank" rel="noopener noreferrer">
+        TWITTER
+    </a> / 
+    <a href="https://linkedin.com/in/saif" target="_blank" rel="noopener noreferrer">
+        LINKEDIN
+    </a>
+                </p> */}
                 <p className="page-total">/04</p>
             </div>
 

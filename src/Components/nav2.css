@@ -12,12 +12,17 @@
   background: transparent;
   position: relative;
   z-index: 10;
+  transition: all 0.3s ease;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.navbar.scrolled {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-out;
 }
 
 /* Brand (Logo) */
@@ -29,23 +34,22 @@
 .logo {
   width: 80px;
 }
-.nav-icon
-{
+.nav-icon {
   width: 50px;
   height: 50px;
 }
+
 /* Navbar Links (Visible on Large Screens) */
 .navbar-nav {
   display: flex;
   flex-direction: row;
-  gap: 1.5rem; /* Adds space between links */
+  gap: 1.5rem;
 }
 
 .nav-link {
   position: relative;
   width: 100px;
   height: 2rem;
-  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,8 +57,9 @@
   color: white;
   font-size: 1rem;
   border-radius: 2rem 0rem 2rem 0rem;
-  overflow: hidden; /* Ensure the pseudo-element stays within bounds */
-  z-index: 1; /* Positioning for proper layering */
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease;
 }
 
 .nav-link::before {
@@ -65,20 +70,18 @@
   width: 100%;
   height: 100%;
   background-color: aliceblue;
-  transform: scaleY(0); /* Start with no fill */
-  transform-origin: bottom; /* Start filling from the bottom */
+  transform: scaleY(0);
+  transform-origin: bottom;
   transition: transform 0.3s ease;
-  z-index: -1; /* Place behind the text */
+  z-index: -1;
 }
 
-.nav-link:hover::before 
-{
-  transform: scaleY(1); /* Fill effect from bottom to top on hover */
+.nav-link:hover::before {
+  transform: scaleY(1);
 }
 
 .nav-link:hover {
-  color: black; /* Adjust text color on hover */
-
+  color: black;
 }
 
 /* Toggle Button (Visible on Small Screens) */
@@ -87,11 +90,10 @@
   z-index: 20;
   background: none;
   border: none;
-  outline: none;
   cursor: pointer;
 }
-.navbar-toggler:focus
-{
+
+.navbar-toggler:focus {
   outline: none;
   box-shadow: none;
 }
@@ -103,7 +105,6 @@
   display: block;
   position: relative;
   transition: all 0.3s ease;
-
 }
 
 .navbar-toggler-icon::before,
@@ -111,7 +112,7 @@
   content: '';
   width: 30px;
   height: 3px;
-  background-color:white;
+  background-color: white;
   position: absolute;
   transition: all 0.3s ease;
 }
@@ -153,6 +154,7 @@
   transform: translateY(-100%);
   transition: transform 0.5s ease-in-out;
   z-index: 15;
+  
 }
 
 .menu-overlay.show {
@@ -165,37 +167,105 @@
 }
 
 .menu-item {
-  margin: 1rem 0; 
+  margin: 1rem 0;
+  color: white;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .menu-item a {
-  width: 90%;
+  width: 90px;
   text-decoration: none;
-  color: white;
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 0.5rem 1.5rem; /* Padding for better hover area */
+  padding: 0.5rem 1.5rem;
   transition: color 0.3s ease, background-color 0.3s ease;
   outline: none;
+  border-radius: 2rem 0rem 2rem 0rem;
+
 }
 
 .menu-item a:hover {
-  color: black;
+  color: black !important;
   background-color: white;
-  border-radius: 2rem 0rem 2rem 0rem; 
+  border-radius: 2rem 0rem 2rem 0rem;
 }
 
 /* Reset margins and paddings for better layout */
 .container-fluid {
   margin: 0 auto;
-  padding: 0 2rem; /* Controls spacing around navbar */
+  padding: 0 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: none;
+  }
+
+  .menu-overlay {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .menu-item a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .menu-item a {
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 2px;
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    width: 25px;
+    height: 2px;
+  }
+}
+/* Divider Line */
+.menu-divider {
+  width: 80%;
+  margin: 1.5rem auto;
+  border: 0;
+  height: 1px;
+  background-color: white;
+  opacity: 0.7;
+}
+
+/* Social Media List */
+.social-media-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.social-media-item a {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.social-media-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.social-media-item img:hover {
+  transform: scale(1.1);
 }
 
 
-@media (max-width:430px) {
-
-.navbar-nav {
-display: none; 
-}
-  
-}

@@ -48,20 +48,20 @@ function Connect() {
   <p>FEEL FREE TO CONNECT WITH ME ON SOCIAL</p>
   <div className="links">
     <span>
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-        <img src="src/assets/Image/instagram-1-svgrepo-com.svg" alt="Instagram" className="icons" />
+      <a href="https://www.instagram.com/x._saifu_/" target="_blank" rel="noopener noreferrer">
+        <img src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="Instagram" className="icons" />
         INSTAGRAM
       </a>
     </span>
     <span>
-      <a href="https://wa.me/9789988242" target="_blank" rel="noopener noreferrer">
-        <img src="src/assets/Image/whatsapp-svgrepo-com.svg" alt="WhatsApp" className="icons" />
+      <a href="https://wa.me/+91 9789988242" target="_blank" rel="noopener noreferrer">
+        <img src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="WhatsApp" className="icons" />
         WHATSAPP
       </a>
     </span>
     <span>
       <a href="https://www.linkedin.com/in/mdsaif233/" target="_blank" rel="noopener noreferrer">
-        <img src="src/assets/Image/linkedin-svgrepo-com.svg" alt="LinkedIn" className="icons" />
+        <img src="https://www.svgrepo.com/show/448234/linkedin.svg" alt="LinkedIn" className="icons" />
         LINKEDIN
       </a>
     </span>

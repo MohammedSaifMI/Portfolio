@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 import gsap from 'gsap';
 import '../Components/hero.css';
-import { Box2 } from 'three/src/Three.js';
 
 function Hero() {
     useEffect(() => {
@@ -13,6 +13,7 @@ function Hero() {
         );
 
         gsap.fromTo(
+
             '.span1',
             { x: -200, opacity: 0 },
             { x: 0, opacity: 1, delay: 0.2, duration: 1.5, ease: 'power3.out' }
@@ -32,6 +33,7 @@ function Hero() {
     return (
         <div className="Home d-flex flex-column justify-content-between text-white">
             {/* Scroll Section */}
+
             <div className="home_scroll position-absolute start-0 mt-5">
                 <p className="m-0 ms-4">
                     <span className="home_scroll_text">
@@ -67,6 +69,7 @@ function Hero() {
                         Creative thinking and problem <br />
                         solving are where my mind wanders, <br />
                         using my knowledge and passion for <br />
+
                         design as my medium.
                     </p>
                 </div>
@@ -74,9 +77,15 @@ function Hero() {
 
             {/* Bottom Section with the Button */}
             <div className="Arrow-btn mb-3 text-center">
-                <button className="btn btn-custom rounded-circle">
-                    <i className="fa-solid fa-arrow-down"></i>
-                </button>
+            <ScrollLink
+                    to="next-section"
+                    smooth={true}
+                    duration={500}
+                >
+                    <button className="btn btn-custom rounded-circle">
+                        <i className="fa-solid fa-arrow-down"></i>
+                    </button>
+                </ScrollLink>
             </div>
         </div>
     );

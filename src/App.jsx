@@ -1,50 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import Hero from './Components/Hero';
-import Box2 from './Components/Box2';
-import Capabilites from './Components/Capabilites';
-import Connect from './Components/Connect';
+import Home from './Components/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Loader from './Components/Loader';
-import Projectshowcasebox from './Components/Projectshowcasebox';
-import Nav2  from './Components/Nav2';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true); // State to track loader visibility
 
   useEffect(() => {
+    // Simulate a loading duration
     const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 7000);
-    return () => clearTimeout(timer);
+      setLoading(false); // Hide loader after 3 seconds
+    }, 6000);
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
 
-  if (isLoading) {
-    // return <Loader />; 
+  if (loading) {
+    // Show only the loader while loading is true
+    return <Loader />;
   }
 
   return (
-    <>
-      <div className="background">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <Nav2/>
-       <Hero />
-      <Box2 />
-      <Projectshowcasebox/>
-      <Capabilites />
-      <Connect /> 
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Portfolio" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
